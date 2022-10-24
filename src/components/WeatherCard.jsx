@@ -5,7 +5,7 @@ function WeatherCard() {
 
         <div className="container  bg-warning">
             {/* define the card */}
-            <div className="card mx-auto  text-light">
+            <div className="card mx-auto text-light">
 
                 {/* create a grid with 12 columns */}
                 <div className="row g-0">
