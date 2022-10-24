@@ -1,0 +1,22 @@
+body {
+  background-color: #2f3544;
+}
+
+/* this affect the App component by using ClassName="App" */
+.App {
+  text-align: center;
+}
+
+.input-group {
+  width: 50%;
+}
+
+.card {
+  width: 50%;
+}
+/* 
+.imgWidth {
+  width: 150px;
+  height: 150px;
+}
+ */
