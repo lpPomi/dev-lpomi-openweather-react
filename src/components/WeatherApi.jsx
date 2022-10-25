@@ -8,9 +8,15 @@ import { useState, useEffect } from 'react'
 //const urlPosts = 'https://jsonplaceholder.typicode.com/posts';
 //const urlPosts = 'https://dummyjson.com/products'
 
-const urlWeather = 'https://api.openweathermap.org/data/2.5/weather?q=london&appid=eee79289eb4403839653d02ed4d3536a'
+/* const urlWeather = 'https://api.openweathermap.org/data/2.5/weather?q=london&appid=eee79289eb4403839653d02ed4d3536a' */
 
-function WeatherApi() {
+
+let urlWeather = 'https://api.openweathermap.org/data/2.5/weather?appid=eee79289eb4403839653d02ed4d3536a&lang=en&q=london'
+
+let urlForecast = 'https://api.openweathermap.org/data/2.5/forecast?appid=eee79289eb4403839653d02ed4d3536a&lang=en&q=london'
+
+
+function WeatherApi({ loc, filled }) {
 
     /*  Attention .. you must get the array data to work with the map function */
 
@@ -19,21 +25,95 @@ function WeatherApi() {
     const [forecast, setForecast] = useState([])
 
 
+    /* if (typeof loc === 'undefined') {
+        console.log('loc undefined ')
+    } else if (Object.values(loc) === 'London') {
+        console.log('loc = London')
 
-    /* when the component is loaded this hook read the APi data and store it
-        in array weather with the command setweather(res.data.weather) */
-    useEffect(() => {
-        axios.get(urlWeather)
-            /*   .then(res => console.log(res.data)) */
-            /*   .then(res => console.log(res.data.weather)) */
-            .then(res => setWeather(res.data.weather))
-    }, [])
+        useEffect(() => {
+            axios.get(urlWeather)
+                .then(res => console.log(res.data))
+
+                .catch((error) => console.error(error));
+        }, [])
+
+    } */
+
+
+    function readApi() {
+        console.log('in ReadApi!!! ##########')
+        useEffect(() => {
+            axios.get(urlWeather)
+                .then(res => console.log(res.data))
+
+                .catch((error) => console.error(error));
+        }, [])
+
+    }
+
+
+    /*     console.log({ loc }) */
+
+
+    /* when the component is loaded this hook read the APi data and store it  in the weather array with the command setWeather(res.data.weather) */
+
+
+
+    /*  create the function getWeather to get the data from api 
+        the parameter loc comes from the Form component.
+    */
+
+
+    /* 
+        const getWeather = async () => {
+     
+            console.log('in getWeather')
+            console.log(loc)
+     
+     
+            urlWeather = urlWeather + loc
+     
+            console.log(urlWeather)
+     
+            // here comes the function
+            try {
+                const result = await axios.get(urlWeather);
+                console.log(result.data);
+                loc = ''
+            } catch (error) {
+                console.error(error);
+            }
+        } */
+
+
+
+
 
 
 
     return (
 
         <div>
+            {/* 
+            {filled &&
+                <div>
+                    <h2>HUUUUU</h2>
+                    {readApi}
+                </div>
+
+            } */}
+
+            {/*     <h1 className='text-light'  >Hi </h1> */}
+            {/*  {
+                <button onClick={getWeather}>
+                    get weather
+                </button>
+            }
+ */}
+
+
+
+
             {/* here get the weather from array and show it in the WeatherApi page 
             
             search for:
@@ -65,7 +145,7 @@ function WeatherApi() {
 
             <div>
 
-
+                {/* 
                 {
                     // to read data from an array
                     Object.keys(weather).map((key, i) => (
@@ -74,7 +154,7 @@ function WeatherApi() {
                             <h4 className='bg-success text-light'> {weather[i].description}</h4>
                         </div>
                     ))
-                }
+                } */}
             </div>
 
 
