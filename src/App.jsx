@@ -38,6 +38,7 @@ function App() {
 
     /*  to visualize the spinner */
     setLoading(true);
+    /*   console.log('loading oben ##### ', loading) */
     /* contains the city information */
     setLocation(cityName);
 
@@ -57,6 +58,7 @@ function App() {
     }).then((weatherData) => {
       console.log(weatherData);
       setWeather(weatherData);
+      /*       setLoading(false); */
     }).catch(error => {
       console.log(error);
       setLoading(false);
@@ -77,15 +79,11 @@ function App() {
       setForecast(forecastData);
       setLoading(false);
       setShow(true);
-
     }).catch(error => {
       console.log(error);
       setLoading(false);
       setShow(false);
     });
-
-
-
 
 
     /* fetch(urlWeather)
