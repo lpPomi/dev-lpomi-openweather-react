@@ -13,12 +13,17 @@ function WaetherForm({ newLocation }) {
         /* prevent to refresh the website */
         event.preventDefault();
 
+
         /* show as json */
         console.log({ city })
 
         /* if city is empty ... do nothing */
         if (city === '' || !city) return
         newLocation(city);
+
+        /* clear the city input field */
+        setCity('')
+
     }
 
 

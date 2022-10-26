@@ -14,9 +14,35 @@ body {
 .card {
   width: 50%;
 }
-/* 
-.imgWidth {
-  width: 150px;
-  height: 150px;
+
+.card-city {
+  position: absolute;
+  padding: 20px;
+  /* left: 12%; */
 }
- */
+
+.card-date {
+  position: absolute;
+  padding-left: 20px;
+  margin-top: 60px;
+  /* left: 12%; */
+}
+
+.card-temp {
+  position: absolute;
+  padding-left: 20px;
+  margin-top: 140px;
+  font-size: 50px;
+}
+
+.card-desc {
+  position: absolute;
+  padding-left: 20px;
+  margin-top: 220px;
+}
+
+.imgWidth {
+  width: 214px;
+  height: 400px;
+  /*   margin-top: 10px; */
+}
